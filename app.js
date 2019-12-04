@@ -4,6 +4,9 @@ const addForm = document.querySelector(".add");
 
 const list = document.querySelector(".todos");
 
+
+
+// add todos
 const generateTemplate = todo => {
 
     var html = `
@@ -25,6 +28,17 @@ addForm.addEventListener("submit", e => {
     if(todos.length) {
         generateTemplate(todos);
         addForm.reset();
+    }
+
+});
+
+// delete todos
+list.addEventListener("click", e => {
+
+    if(e.target.classList.contains("delete")) {
+
+        e.target.parentElement.remove();
+
     }
 
 });
